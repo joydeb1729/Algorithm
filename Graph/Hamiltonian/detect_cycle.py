@@ -20,16 +20,6 @@ class Graph:
         self.adj_list[v].append(w)
         self.adj_list[w].append(v)
         
-    def printCycle(self, path):
-        """
-        Prints the Hamiltonian cycle.
-
-        Parameters:
-        path (list): A list of vertices representing the Hamiltonian cycle.
-        """
-        for vertex in path:
-            print(vertex, end=' ')  # Print each vertex in the cycle
-        print()  # Print newline after the cycle
     
     def isValid(self, vertex, pos, path):
         """
@@ -96,7 +86,6 @@ class Graph:
         # Call the recursive search function to find a Hamiltonian cycle
         if self.search(path, 1):
             print('Hamiltonian Cycle detected:')
-            self.printCycle(path)  # Print the found cycle
         else:
             print('No Hamiltonian Cycle.')  # If no cycle is found, print this message
 
@@ -143,7 +132,6 @@ g2.find_hamiltonian_cycle()  # Find and print Hamiltonian cycle for g2
 # Expected Output ->
 # Graph1->
 # Hamiltonian Cycle detected:
-# 0 1 2 4 3 
 
 # Graph2->
 # No Hamiltonian Cycle.
