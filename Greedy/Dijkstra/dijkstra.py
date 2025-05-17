@@ -39,7 +39,7 @@ def dijkstra(graph, V, start):
         
         for j in range(V):
             # Check if an edge exists, if the vertex is unprocessed, and if a shorter path is found
-            if (graph[U][j] != 0 and not processed[j] and value[U] != sys.maxsize and
+            if (graph[U][j]!=0 and graph[U][j] != sys.maxsize and not processed[j] and value[U] != sys.maxsize and
                     (value[U] + graph[U][j] < value[j])):
                 value[j] = value[U] + graph[U][j]
                 parent[j] = U  # Store the parent vertex in the shortest path
